@@ -13,9 +13,17 @@ function npEditor() {
             floatingPanel.appendTo(document.body);
 
             elem.on('mouseover', function () {
+                var floatingPanelLeft;
+
+                if ($(document).width() <= elem.outerWidth()) {
+                    floatingPanelLeft = $(document).width() - floatingPanel.outerWidth() - 15;
+                } else {
+                    floatingPanelLeft = elem.offset().left + elem.outerWidth() - (floatingPanel.outerWidth() / 2);
+                }
+
                 floatingPanel.css({
                     position: 'absolute',
-                    left: elem.offset().left + elem.outerWidth() - (floatingPanel.outerWidth() / 2),
+                    left: floatingPanelLeft,
                     top: elem.offset().top + ((elem.outerHeight() / 2) - (floatingPanel.outerHeight() / 2))
                 }).addClass('active');
             });

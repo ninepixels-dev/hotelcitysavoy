@@ -139,7 +139,7 @@ module.exports = function (grunt) {
         },
         open: {
             dev: {
-                path: 'http://localhost/hotelcitysavoy.com/dist'
+                path: 'http://localhost/hotelcitysavoy/dist'
             }
         }
     });

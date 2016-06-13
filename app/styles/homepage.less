@@ -1,0 +1,103 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.home-slider {
+    position: relative;
+    max-height: 880px;
+    overflow: hidden;
+    .teaser {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        opacity: 0;
+        .transition(opacity .5);
+
+        p {
+            display: block;
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            line-height: 48px;
+            text-transform: uppercase;
+            padding: 10px;
+            color: @white;
+
+            background-color: rgba(53, 53, 53, .9);
+        }
+
+        b {
+            font-size: 72px;
+            line-height: 72px;
+        }
+    }
+}
+
+.reservation-bar {
+    background-color: @bg-color-primary;
+    min-height: 120px;
+}
+
+.few-words {
+    padding: 160px 0;
+
+    .sub-heading { margin-bottom: 50px; }
+
+    .col-md-4 {
+        text-align: center;
+        padding: 0 40px;
+
+        &:first-of-type {
+            border-right: 1px solid #e8ddcc;
+        }
+
+        &:last-of-type {
+            border-left: 1px solid #e8ddcc;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin: 40px 0 15px 0;
+        }
+        p {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-style: italic;
+            line-height: 23px;
+            color: #7e7e7e;
+        }
+    }
+}
+
+.room-teaser {
+    background-color: @bg-color-primary;
+    .col-md-6:first-of-type { padding-left: 0; }
+    .room-description {
+        padding: 75px 15% 75px 15px;
+        * {
+            font-family: 'Lora', serif;
+            color: @white;
+        }
+        h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 23px;
+        }
+        ul { margin-top: 25px; }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            width: 48%;
+
+            &:nth-of-type(2n+1) {
+                margin-right: 4%;
+            }
+        }
+    }
+}

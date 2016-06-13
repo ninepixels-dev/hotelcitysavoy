@@ -1,0 +1,103 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+body {
+    background-color: @bg-color-secondary;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+    }
+}
+
+.logo-container {
+    position: relative;
+    height: 80px;
+    text-align: center;
+
+    img {
+        position: relative;
+        margin: 10px 0;
+        z-index: 2;
+    }
+
+    .logo_mask {
+        width: 220px;
+        height: 130px;
+
+        position: absolute;
+        left: 50%; bottom: -50px;
+        margin-left: -110px;
+        z-index: 1;
+
+        background: url('../images/logo_mask.png') no-repeat bottom center;
+    }
+}
+
+.main-navigation {
+    .col-md-5 {
+        &:first-of-type { text-align: right; }
+        &:last-of-type { text-align: left; }
+    }
+
+    li {
+        display: inline-block;
+        vertical-align: middle;
+
+        list-style: none;
+        padding: 0 20px;
+
+        > ul { display: none; }
+
+        a {
+            position: relative;
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            line-height: 80px;
+            letter-spacing: 0.5px;
+            padding: 3px 0;
+            text-transform: uppercase;
+            color: #353535;
+
+            &:hover {
+                border-bottom: 1px solid #c2a476;
+                &:before, &:after {
+                    position: absolute;
+                    content: '\2022';
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #c2a476;
+                    bottom: -9px;
+                }
+                &:before {
+                    left: -4px;
+                }
+                &:after {
+                    right: -4px;
+                }
+            }
+        }
+    }
+}
+
+.title-symbol {
+    display: inline-block;
+    width: 122px;
+    height: 21px;
+
+    background: url('../images/title-symbol.png') no-repeat center center;
+}
+
+.sub-heading {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #353535;
+}

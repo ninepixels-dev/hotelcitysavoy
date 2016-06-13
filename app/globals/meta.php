@@ -9,3 +9,5 @@
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
 <link rel="stylesheet" href="assets/styles/app.min.css" type="text/css" />
+
+<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700|Open+Sans:400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
