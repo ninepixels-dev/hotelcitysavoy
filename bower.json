@@ -1,0 +1,24 @@
+{
+  "name": "ninepixels-seed",
+  "version": "1.0.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-cookies": "^1.4.9",
+    "angular-animate": "^1.4.9",
+    "angular-bootstrap": "^1.1.2",
+    "angular-file-upload": "^2.2.0",
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "normalize-css": "^3.0.3",
+    "owl.carousel": "OwlCarousel2#^2.0.0-beta.3",
+    "medium-editor": "^5.15.1",
+    "angular-medium-editor": "^1.1.1",
+    "medium-editor-tables": "^0.5.1",
+    "fancyBox": "^2.1.5"
+  }
+}

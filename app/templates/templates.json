@@ -1,0 +1,7 @@
+{
+    "Homepage": "homepage.php",
+    "List View": "list-view.php",
+    "Single View": "single-view.php",
+    "Content Page": "content-page.php",
+    "Contact": "contact.php"
+}

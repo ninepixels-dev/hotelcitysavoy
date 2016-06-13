@@ -1,0 +1,29 @@
+<div class="holding-container"></div>
+
+<div class="toolbar-container">
+    <div class="user-info pull-left">
+        <div class="avatar"></div>
+        <div class="user">{{user.user_name}} {{user.user_surname}}</div>
+    </div>
+
+    <div class="btn-group" ng-controller="npPageController as pageCtrl">
+        <button class="btn btn-toolbar" ng-click="pageCtrl.controlPage()">
+            <i class="toolbar-icon icon-control-page"></i>Upravljanje stranicama
+        </button>
+        <button class="btn btn-toolbar" ng-click="pageCtrl.editCurrentPage()">
+            <i class="toolbar-icon icon-edit-page"></i>Izmena trenutne stranice
+        </button>
+    </div>
+
+    <div class="btn-group" ng-controller="npUsersController as userCtrl">
+        <button class="btn btn-toolbar" ng-click="userCtrl.controlUsers()">
+            <i class="toolbar-icon icon-control-users"></i>Upravljanje korisnicima
+        </button>
+    </div>
+
+    <div class="btn-group pull-right">
+        <button class="btn btn-toolbar" ng-click="logout()">
+            <i class="toolbar-icon icon-log-out"></i>Odjavljivanje
+        </button>
+    </div>
+</div>

@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^(www\.)?theninepixels\.com$ [NC]
+RewriteRule !^website/ /website%{REQUEST_URI} [L,NC]

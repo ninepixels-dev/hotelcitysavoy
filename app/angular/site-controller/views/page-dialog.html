@@ -1,0 +1,136 @@
+<div class="modal-header">
+    <i class="toolbar-icon icon-control-page"></i>
+    <h4>Upravljaj stranicama</h4>
+
+    <button type="button" ng-show="view === 'listpage'" class="btn btn-default pull-right" ng-click="cancel()">X</button>
+    <button type="button" ng-show="view === 'addpage'" class="btn btn-default pull-right" ng-click="undo()">X</button>
+</div>
+
+<div class="modal-body" ng-show="view === 'listpage'">
+    <div class="form-group">
+        <label for="searchPage">Pretraga</label>
+        <input type="text" class="form-control" id="searchPage" ng-model="search.page_navName" ng-trim="false">
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Page Navigation Name</th>
+                <th>Page Name</th>
+                <th>Page Parent</th>
+                <th>Page Template</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="page in pages| filter:search track by page.page_id" ng-class="{'ident': page.page_parent}">
+                <td>{{page.page_navName}}</td>
+                <td>{{page.page_name}}</td>
+                <td>{{$parent.returnParent(page.page_parent).page_navName}}</td>
+                <td>{{page.page_template}}</td>
+                <td ng-click="$parent.updatePage(page)"><i class="glyphicon glyphicon-pencil"></i></td>
+                <td ng-click="$parent.deletePage(page)"><i class="glyphicon glyphicon-trash"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal-body" ng-show="view === 'addpage'">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="pageParent">Page parent</label>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                        {{page.page_parent|| 'Please select'}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="page in pages track by page.page_id">
+                            <a ng-click="$parent.page.page_parent = page.page_id">
+                                <span ng-if="page.page_parent">{{page.page_navName}} ({{$parent.returnParent(page.page_parent).page_navName}})</span>
+                                <span ng-if="!page.page_parent">{{page.page_navName}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pageName">Page name</label>
+                <input type="text" class="form-control" id="pageName" ng-change="validate(page.page_name)" ng-model="page.page_name" ng-trim="false">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pageTemplate">Page template</label>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                        {{page.page_template|| 'Please select'}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="(key, val) in templates">
+                            <a ng-click="$parent.page.page_template = val">{{key}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pageTitle">Page title</label>
+                <input type="text" class="form-control" id="pageTitle" ng-model="page.page_title">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pageNavName">Page navigation name</label>
+                <input type="text" class="form-control" id="pageNavName" ng-model="page.page_navName">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="pageDescription">Page description</label>
+                <textarea class="form-control" id="pageDescription" ng-model="page.page_description"></textarea>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group" np-single-image-upload data-upload="uploadImage"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="page.page_header"> Show Header</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="page.page_navigation"> Show Navigation</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="page.page_footer"> Show Footer</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="page.page_inNavigation"> Show in navigation</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="page.page_active"> Show page</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer" ng-show="view === 'listpage'">
+    <button type="button" class="btn btn-ninepixels" ng-click="addPage()">Dodaj stranu</button>
+</div>
+
+<div class="modal-footer" ng-show="view === 'addpage'">
+    <button type="button" class="btn btn-ninepixels" ng-click="save(page)">Sačuvaj</button>
+</div>

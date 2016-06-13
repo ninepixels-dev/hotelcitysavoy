@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h4 ng-if="!editMode">Dodaj artikal</h4>
+    <h4 ng-if="editMode">Izmeni artikal</h4>
+    <button type="button" class="btn pull-right" ng-click="cancel()">X</button>
+</div>
+
+<div class="modal-body">
+    <div class="form-group" np-single-image-upload data-upload="uploadImage" ng-if="type !== 'gallery'"></div>
+
+    <div class="form-group medium-editor" ng-show="type !== 'gallery'">
+        <medium-editor ng-model="item.item_structure" bind-options="mediumBindOptions"></medium-editor>
+    </div>
+
+    <div class="form-group" ng-if="type !== 'gallery'">
+        <label for="item-classes">Dodatne klase / Tab</label>
+        <input type="text" class="form-control" ng-model="item.item_class" id="item-classes">
+    </div>
+
+    <div class="form-group">
+        <label for="item-video">Youtube video</label>
+        <input type="text" class="form-control" ng-model="item.item_video">
+    </div>
+
+    <div class="form-group" np-multi-image-upload data-upload="uploadImage"  ng-if="type === 'gallery'"></div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-ninepixels" ng-click="save(item)">Sačuvaj</button>
+</div>

@@ -1,0 +1,98 @@
+<div class="modal-header">
+    <i class="toolbar-icon icon-control-users"></i>
+    <h4>Upravljaj korisnicima</h4>
+    <button type="button" ng-show="view === 'listuser'" class="btn btn-default pull-right" ng-click="cancel()">X</button>
+    <button type="button" ng-show="view === 'adduser'" class="btn btn-default pull-right" ng-click="undo()">X</button>
+</div>
+
+<div class="modal-body" ng-show="view === 'listuser'">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Korisnik</th>
+                <th>Korisničko ime</th>
+                <th>Tip naloga</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users track by user.user_id">
+                <td>{{user.user_name}}</td>
+                <td>{{user.user_username}}</td>
+                <td>{{user.user_type}}</td>
+                <td>{{user.user_status == 1 ? 'Activated' : 'Deactivated'}}</td>
+                <td ng-click="$parent.updateUser(user)"><i class="glyphicon glyphicon-pencil"></i></td>
+                <td ng-click="$parent.deleteUser(user)"><i class="glyphicon glyphicon-trash"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal-body" ng-show="view === 'adduser'">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Ime</label>
+                <input type="text" class="form-control" ng-model="newuser.user_name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Adresa</label>
+                <input type="text" class="form-control" ng-model="newuser.user_address">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" ng-model="newuser.user_email">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Korisničko ime</label>
+                <input type="text" class="form-control" ng-model="newuser.user_username">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Avatar</label>
+                <input type="text" class="form-control" ng-model="newuser.user_picture">
+            </div>
+        </div>
+        <div class="col-md-6" ng-if="!editMode">
+            <div class="form-group">
+                <label>Lozinka</label>
+                <input type="text" class="form-control" ng-model="newuser.user_password">
+            </div>
+        </div>
+        <div class="col-md-6" ng-if="!editMode">
+            <div class="form-group">
+                <label>Lozinka ponovo</label>
+                <input type="text" class="form-control" ng-model="dummy.user_password">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Tip</label>
+                <input type="text" class="form-control" ng-model="newuser.user_type">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Status</label>
+                <input type="text" class="form-control" ng-model="newuser.user_status">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer" ng-show="view === 'listuser'">
+    <button type="button" class="btn btn-ninepixels" ng-click="addUser()">Novi korisnik</button>
+</div>
+
+<div class="modal-footer" ng-show="view === 'adduser'">
+    <button type="button" class="btn btn-ninepixels" ng-click="save(newuser, dummy)">Sačuvaj</button>
+</div>
