@@ -34,12 +34,3 @@ while ($row = $result->fetch_assoc()) {
 }
 echo '</div>';
 echo '</ul>';
-
-// Meta Navigation
-echo '<ul class="meta-navigation">';
-$args = array('table' => 'pages', 'ident' => 'page_parent', 'identValue' => '7');
-$result = get_content($args);
-while ($row = $result->fetch_assoc()) {
-    echo '<li><a href="' . $row['page_name'] . '">' . $row['page_navName'] . '</a></li>';
-}
-echo '</ul>';

@@ -59,6 +59,10 @@ function get_content($args) {
 
     $mysqli->query('SET NAMES utf8');
 
+    if ($mysqli->query($sql)->num_rows === 0 && isset($args['identify'])) {
+        echo '<div class="ninepixels_item_holder" np-editor data-identifier="' . $args['identify'] . '"></div>';
+    }
+
     return $mysqli->query($sql);
 }
 

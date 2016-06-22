@@ -6,7 +6,7 @@
 <meta name="author" content="Nine Pixels">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 
 <link rel="stylesheet" href="assets/styles/app.min.css" type="text/css" />
 

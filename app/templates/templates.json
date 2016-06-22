@@ -3,5 +3,6 @@
     "List View": "list-view.php",
     "Single View": "single-view.php",
     "Content Page": "content-page.php",
+    "Gallery Page": "gallery-page.php",
     "Contact": "contact.php"
 }

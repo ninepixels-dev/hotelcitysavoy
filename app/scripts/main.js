@@ -4,4 +4,8 @@ $(document).ready(function () {
         marginLeft: -$('.home-slider .teaser').outerWidth() / 2,
         opacity: 1
     });
+
+    $('.owl-carousel').owlCarousel({
+        items: 1
+    });
 });

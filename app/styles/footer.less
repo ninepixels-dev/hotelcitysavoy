@@ -1,0 +1,45 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.contact-page {
+    .page-content { padding: 110px 0; }
+}
+
+.container-fluid.footer {
+    background-color: @bg-color-primary;
+
+    .main-navigation {
+        .col-md-5 {
+            &:first-of-type { text-align: left; }
+            &:last-of-type { text-align: right; }
+        }
+        li {
+            a {
+                color: @white;
+                line-height: 120px;
+            }
+            > ul { display: none; }
+        }
+    }
+
+    .logo-container {
+        .logo_mask {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            margin-left: -75px;
+            bottom: -55px;
+            background: none;
+            background-color: @bg-color-secondary;
+        }
+    }
+}
+
+.container-fluid.copyright {
+    background-color: @detail-color;
+
+    .col-md-6 {
+        line-height: 70px;
+        p { margin: 0; }
+    }
+}

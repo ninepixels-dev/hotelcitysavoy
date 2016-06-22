@@ -87,7 +87,7 @@ function npUploaderThumb($window) {
 npUploaderController.$inject = ['$scope', 'FileUploader', '$rootScope'];
 function npUploaderController($scope, FileUploader, $rootScope) {
     var uploader = $scope.uploader = new FileUploader({
-        url: '../server/np-upload.php'
+        url: 'server/np-upload.php'
     });
 
     // CALLBACKS

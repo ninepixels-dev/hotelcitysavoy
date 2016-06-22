@@ -102,7 +102,7 @@ module.exports = function (grunt) {
             },
             server: {
                 files: [
-                    {expand: true, src: ['server'], dest: 'dist/server'}
+                    {expand: true, src: ['server/**/*'], dest: 'dist'}
                 ]
             }
         },
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build-server', [
-       'copy:server'
+        'copy:server'
     ]);
 
     require('load-grunt-tasks')(grunt);

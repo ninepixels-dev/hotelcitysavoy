@@ -1,0 +1,99 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.page-slider {
+    .row {
+        height: 350px;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+.page-content {
+    padding: 160px 15px 0 15px;
+    .col-md-5 {
+        padding: 90px 30px 90px 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #7e7e7e;
+        text-align: justify;
+    }
+    .col-md-7 {
+        position: relative;
+
+        .image_holder {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 0px 23px 8px rgba(0,0,0,.2);
+            height: 630px;
+        }
+        img {
+            position: absolute;
+            max-width: none;
+            width: auto;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+.hotel-facts {
+    .facts-icon {
+        position: absolute;
+        left: 25px;
+        top: 30px;
+    }
+    .col-md-6 {
+        padding: 0;
+        > .col-md-6 {
+            position: relative;
+            padding: 38px 38px 38px 110px;
+            margin-bottom: -1px;
+            height: 317px;
+            border: 1px solid #3f3f3f;
+        }
+    }
+    h2 {
+        font-family: 'Lora', serif;
+        font-size: 22px;
+        margin-top: 5px;
+        padding-bottom: 25px;
+        text-transform: uppercase;
+        color: @white;
+    }
+    p {
+        font-size: 14px;
+        line-height: 21px;
+        color: #ababab;
+    }
+}
+.split-view {
+    padding: 115px 0;
+    .col-md-6 {
+        &:first-of-type {
+            position: relative;
+            padding: 90px 30px 90px 15px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #7e7e7e;
+            text-align: justify;
+        }
+
+        .image_holder {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 0px 23px 8px rgba(0,0,0,.2);
+            height: 630px;
+
+            img {
+                position: absolute;
+                max-width: none;
+                width: auto;
+                height: 100%;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}

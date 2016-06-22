@@ -1,0 +1,110 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.list-view {
+    .page-content {
+        padding: 55px;
+    }
+}
+
+.panel {
+    border-radius: 5px;
+    overflow: hidden;
+
+    .panel-header {
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        line-height: 60px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #f9f6f1;
+        background-color: @detail-color;
+    }
+    .panel-content {
+        padding: 30px;
+        background-color: @bg-color-primary;
+
+        label {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            color: #9a9a9a;
+            display: block;
+        }
+
+        .room-type { margin-bottom: 25px; }
+
+        .group-heading {
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: @white;
+        }
+
+        .price {
+            input {
+                width: 47%;
+                padding: 5px;
+                border: 1px solid #9a9a9a;
+                background-color: transparent;
+                &:first-of-type {
+                    margin-right: 3%;
+                }
+            }
+        }
+    }
+}
+
+.list-item {
+    position: relative;
+    margin-bottom: 50px;
+    .list-image {
+        height: 245px;
+        background-color: #919191;
+    }
+    .list-description {
+        position: absolute;
+        bottom: -30px;
+        left: 25px; right: 25px;
+        padding: 22px 10px;
+        text-align: center;
+        background-color: #353535;
+        overflow: hidden;
+        max-height: 64px;
+        .transition(all .5s);
+        h3 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #c2a476;
+        }
+        p {
+            font-size: 13px;
+            font-weight: 300;
+            text-align: center;
+            color: #f9f6f1;
+        }
+        .price {
+            display: block;
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+            color: #c2a476;
+            span {
+                display: block;
+                font-size: 14px;
+                text-align: center;
+                color: @white;
+            }
+        }
+    }
+    &:hover {
+        .list-description {
+            max-height: 350px;
+        }
+    }
+}

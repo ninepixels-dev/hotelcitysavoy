@@ -10,7 +10,7 @@ function npSiteController($http, $cookies, $rootScope) {
 
             scope.logout = function () {
                 $http({
-                    url: '../server/np-logout.php'
+                    url: 'server/np-logout.php'
                 }).then(function (response) {
                     if (response.data.logout) {
                         location.reload();

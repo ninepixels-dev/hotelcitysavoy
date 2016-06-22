@@ -5,7 +5,7 @@ function npLoginCtrl($http, $cookies, $scope, api) {
 
     $scope.login = function (login) {
         $http({
-            url: '../server/np-login.php',
+            url: 'server/np-login.php',
             method: 'POST',
             params: login
         }).then(function successCallback(response) {

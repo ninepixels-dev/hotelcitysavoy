@@ -34,7 +34,7 @@ function apiService($q, $http) {
         return {
             fetch: function (params) {
                 return http({
-                    url: '../server/api.php?method=GET&table=' + table,
+                    url: 'server/api.php?method=GET&table=' + table,
                     method: 'POST',
                     data: cleanParam(params),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -44,7 +44,7 @@ function apiService($q, $http) {
             },
             add: function (params) {
                 return http({
-                    url: '../server/api.php?method=POST&table=' + table,
+                    url: 'server/api.php?method=POST&table=' + table,
                     method: 'POST',
                     data: cleanParam(params),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -54,7 +54,7 @@ function apiService($q, $http) {
             },
             update: function (params) {
                 return http({
-                    url: '../server/api.php?method=PUT&table=' + table,
+                    url: 'server/api.php?method=PUT&table=' + table,
                     method: 'POST',
                     data: cleanParam(params),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -64,7 +64,7 @@ function apiService($q, $http) {
             },
             delete: function (params) {
                 return http({
-                    url: '../server/api.php?method=DELETE&table=' + table,
+                    url: 'server/api.php?method=DELETE&table=' + table,
                     method: 'POST',
                     data: cleanParam(params),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -75,7 +75,7 @@ function apiService($q, $http) {
             createuser: function (params) {
                 return http({
                     method: 'POST',
-                    url: '../server/np-register.php',
+                    url: 'server/np-register.php',
                     data: cleanParam(params),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function (response) {

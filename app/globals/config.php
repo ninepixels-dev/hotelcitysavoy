@@ -1,6 +1,6 @@
 <?php
 
-require_once '../server/controllers/np-connect.php';
+require_once 'server/controllers/np-connect.php';
 
 include 'functions.php';
 
