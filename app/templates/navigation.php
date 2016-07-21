@@ -21,7 +21,10 @@ while ($row = $result->fetch_assoc()) {
     }
     $i++;
     echo '<li><a href="' . $row['page_name'] . '">' . $row['page_navName'] . '</a>';
-    $args = array('table' => 'pages', 'ident' => 'page_parent', 'identValue' => $row['page_id']);
+    $args = array(
+        'table' => 'pages',
+        'ident' => array('page_parent' => $row['page_id'], 'page_inNavigation' => '1')
+    );
     $subNavigation = get_content($args);
     if ($subNavigation->num_rows !== 0) {
         echo '<ul>';

@@ -63,6 +63,10 @@ function get_content($args) {
         echo '<div class="ninepixels_item_holder" np-editor data-identifier="' . $args['identify'] . '"></div>';
     }
 
+    if (isset($args['gallery-identify'])) {
+        echo '<div class="ninepixels_item_holder" np-editor data-identifier="' . $args['gallery-identify'] . '" data-type="gallery"></div>';
+    }
+
     return $mysqli->query($sql);
 }
 
@@ -109,6 +113,7 @@ function createStructure($table, $mysqli) {
                 gallery_timestamp       timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 PRIMARY KEY (gallery_id)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+            break;
 
         default:
             $sql = "CREATE TABLE IF NOT EXISTS " . $table . " (

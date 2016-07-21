@@ -1,6 +1,6 @@
 <?php
 
-$requestURI = filter_input(INPUT_SERVER, 'REQUEST_URI');
+$requestURI = $_SERVER['REQUEST_URI'];
 $cleanURL = explode('?', $requestURI, 2);
 $parseURL = explode("/", $cleanURL[0]);
 $page = strtolower(end($parseURL));
