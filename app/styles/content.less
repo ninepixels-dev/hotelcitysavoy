@@ -48,9 +48,9 @@
         padding: 0;
         > .col-md-6 {
             position: relative;
-            padding: 38px 38px 38px 110px;
+            padding: 24px 24px 38px 94px;
             margin-bottom: -1px;
-            height: 317px;
+            height: 264px;
             border: 1px solid #3f3f3f;
         }
     }
@@ -58,7 +58,7 @@
         font-family: 'Lora', serif;
         font-size: 22px;
         margin-top: 5px;
-        padding-bottom: 25px;
+        padding-bottom: 10px;
         text-transform: uppercase;
         color: @white;
     }
@@ -68,6 +68,12 @@
         color: #ababab;
     }
 }
+
+.pattern {
+    background-image: url('../images/pattern.jpg');
+    background-size: cover;   
+}
+
 .split-view {
     padding: 115px 0;
     .col-md-6 {
@@ -94,6 +100,48 @@
                 top: 0;
                 right: 0;
             }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 1480px) {
+    .hotel-facts {
+        h2 {
+            padding-left: 72px;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        .facts-icon {
+            top: 7px;
+        }
+        .col-md-6 > .col-md-6 {
+            padding: 20px;
+        }
+    }
+}
+
+
+@media all and (max-width: 992px) {
+    .page-content {
+        padding: 80px 15px 0;
+
+        .col-md-5 {
+            padding: 45px 30px 45px 15px;
+        }
+    }
+
+    .hotel-facts {
+        h2 {
+            font-size: 19px;
+        }
+        .facts-icon {
+            top: 19px;
+            left: 32px;
+        }
+        .col-md-6 > .col-md-6 {
+            padding: 30px;
+            height: auto;
         }
     }
 }

@@ -48,20 +48,21 @@
     }
     ?>
 </div>
+<div class="container-fluid pattern">
+    <div class="container split-view page-content">
+        <div class="owl-carousel">
+            <?php
+            $args = array('table' => 'items', 'identify' => 'our-facilities', 'create' => true);
+            $result = get_content($args);
 
-<div class="container split-view page-content">
-    <div class="owl-carousel">
-        <?php
-        $args = array('table' => 'items', 'identify' => 'our-facilities', 'create' => true);
-        $result = get_content($args);
-
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="row ' . $row['item_class'] . '" np-editor data-item="' . $row['item_id'] . '" data-identifier="' . $args['identify'] . '">';
-            echo '<div class="col-md-6">' . $row['item_structure'] . '</div>';
-            echo '<div class="col-md-6"><div class="image_holder"><img src="' . str_replace('\\', '/', $row['item_image']) . '" /></div></div>';
-            echo '</div>';
-        }
-        ?>
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="row ' . $row['item_class'] . '" np-editor data-item="' . $row['item_id'] . '" data-identifier="' . $args['identify'] . '">';
+                echo '<div class="col-md-6">' . $row['item_structure'] . '</div>';
+                echo '<div class="col-md-6"><div class="image_holder"><img src="' . str_replace('\\', '/', $row['item_image']) . '" /></div></div>';
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
 </div>
 

@@ -81,6 +81,17 @@ function apiService($q, $http) {
                 }).then(function (response) {
                     return response;
                 });
+            },
+            filelist: function (method, params) {
+                return http({
+                    method: 'POST',
+                    url: 'server/np-filesystem.php',
+                    data: cleanParam(params),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).then(function (response) {
+                    console.log(response);
+                    return response;
+                });
             }
         };
     };

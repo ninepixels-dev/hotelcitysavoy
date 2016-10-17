@@ -1,8 +1,12 @@
 <?php include 'templates/page-header.php' ?>
 
 <div class="container page-content">
-    <div class="sub-heading">
-        Let's drink a Coffee
+    <div class="row">
+        <div class="col-md-12">
+            <div class="sub-heading">
+                Let's drink a Coffee
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-6">

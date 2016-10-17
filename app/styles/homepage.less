@@ -9,7 +9,6 @@
         position: absolute;
         display: block;
         top: 50%;
-        left: 50%;
         text-align: center;
         opacity: 0;
         .transition(opacity .5);
@@ -36,7 +35,7 @@
 
 .reservation-bar {
     background-color: @bg-color-primary;
-    min-height: 120px;
+    min-height: 60px;
 }
 
 .few-words {
@@ -157,6 +156,144 @@
             p {
                 font-family: 'Lora', serif;
             }
+        }
+    }
+}
+
+// Responsive
+@media all and (max-width: 1805px) {
+    .room-teaser {
+        position: relative;
+
+        .col-md-6:first-of-type {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0; left: 0;
+            overflow: hidden;
+            img {
+                max-width: none;
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        .col-md-6:last-of-type {
+            padding-left: 35px;
+            margin-left: 50%;
+        }
+
+        .room-description {
+            padding: 75px 30px 75px 15px;
+        }
+    }
+}
+
+@media all and (max-width: 992px) {
+    .home-slider .teaser {
+        p {
+            font-size: 36px;
+            line-height: 36px;
+        }
+        b {
+            font-size: 42px;
+            line-height: 42px;
+        }
+    }
+
+    .container.distances .col-md-3 {
+        float: left !important;
+    }
+
+    .container-fluid.copyright .col-md-6 {
+        width: 100%;
+        line-height: 30px;
+        text-align: center;
+
+        &:first-of-type {
+            margin-top: 60px;
+        }
+    }
+
+    .room-teaser {
+        .col-md-6:first-of-type, .col-md-6:last-of-type {
+            position: relative;
+            width: 100%;
+            margin: 0;
+        }
+
+        .col-md-6:first-of-type {
+            padding: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .room-description {
+            padding: 45px 15px 45px 15px;
+        }
+    }
+
+    .few-words {
+        padding: 55px 15px;
+
+        .col-md-4 {
+            border: none !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    .split-view {
+        padding: 55px 15px;
+
+        .col-md-6 .image_holder {
+            height: auto;
+            
+            img {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .split-view .col-md-6:first-of-type {
+        padding-top: 35px;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .container.distances .col-md-3 {
+        width: calc(~"50% - 30px");
+
+        &:nth-of-type(2) { border-right: 0; }
+        &:nth-of-type(3) { border-left: 0; }
+    }
+
+    .home-slider .teaser {
+        p {
+            font-size: 28px;
+            line-height: 28px;
+        }
+        b {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+}
+
+@media all and (max-width: 420px) {
+    .home-slider .teaser {
+        p {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        b {
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 500;
         }
     }
 }

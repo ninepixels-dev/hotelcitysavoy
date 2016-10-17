@@ -211,7 +211,36 @@ function npUsersController($uibModal, $scope, api) {
 
 }
 
+npAssetController.$inject = ['$scope', '$uibModal', 'api'];
+function npAssetController($scope, $uibModal, api) {
+    this.viewGallery = function () {
+        $uibModal.open({
+            animation: true,
+            size: 'lg',
+            scope: $scope,
+            windowClass: 'np-modal',
+            controller: modalCtrl,
+            templateUrl: 'angular/views/gallery-dialog.html'
+        });
+    };
+
+    function modalCtrl($uibModalInstance) {
+        $scope.cancel = function () {
+            $uibModalInstance.close();
+        };
+
+        $scope.delete = function (image) {
+            api().filelist('DELETE', image);
+        };
+    }
+
+    api().filelist().then(function (response) {
+        $scope.gallery = response;
+    });
+}
+
 angular.module('ninepixels.siteController', [])
         .directive('npSiteController', npSiteController)
         .controller('npPageController', npPageController)
-        .controller('npUsersController', npUsersController);
+        .controller('npUsersController', npUsersController)
+        .controller('npAssetController', npAssetController);

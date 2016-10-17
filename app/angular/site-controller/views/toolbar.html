@@ -21,6 +21,15 @@
         </button>
     </div>
 
+    <div class="dropdown-toolbar dropdown" ng-controller="npAssetController as assetCtrl">
+        <button class="btn btn-toolbar dropdown-toggle" type="button" data-toggle="dropdown">
+            Sadržaj <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#" ng-click="assetCtrl.viewGallery()">Fotografije</a></li>
+        </ul>
+    </div>
+
     <div class="btn-group pull-right">
         <button class="btn btn-toolbar" ng-click="logout()">
             <i class="toolbar-icon icon-log-out"></i>Odjavljivanje
