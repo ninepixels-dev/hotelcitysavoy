@@ -1,0 +1,45 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.page-content.room-single-content {
+    padding-top: 90px;
+
+    .room-single-gallery { overflow: hidden; }
+
+    .owl-stage-outer {
+        overflow: hidden;
+
+        .owl-item {
+            float: left;
+            padding: 10px;
+        }
+    }
+
+    .owl-nav.disabled { display: none; }
+
+    .room-single-teaser {
+        padding: 10px;
+    }
+
+    table {
+        margin-top: 20px;
+
+        td {
+            padding: 5px 0;
+        }
+
+        b {
+            font-weight: 400;
+            color: @gold;
+        }
+    }
+}
+
+.room-description {
+    padding: 0 40px;
+    text-align: justify;
+
+    h2 {
+        margin-top: -30px;
+    }
+}

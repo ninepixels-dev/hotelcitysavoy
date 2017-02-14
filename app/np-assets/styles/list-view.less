@@ -1,0 +1,65 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.page-content.list-view {
+    padding: 55px;
+    .row {
+        font-size: 0;
+        text-align: center;
+    }
+}
+
+.list-view-item {
+    float: none;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    margin: 2% 1.6666%;
+    padding: 0;
+    background-color: @black;
+
+    img {
+        transition: all .5s;
+    }
+
+    .list-view-item__description {
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        bottom: -10%;
+        padding: 15px;
+        background-color: @bg-color-primary;
+
+        font-family: 'Lora', serif;
+        font-size: 18px;
+        text-align: center;
+        color: @gold;
+
+        transition: all .5s;
+    }
+
+    .gallery_label {
+        position: absolute;
+        width: 100%;
+        top: 50%; margin-top: -30px;
+        font-family: 'Lora', serif;
+        font-size: 18px;
+        color: @gold;
+        opacity: 0;
+        transition: all .5s;
+        .title-symbol { 
+            display: inline-block;
+            width: 100%;
+            background-position: top center;
+            padding-top: 30px;
+        }
+    }
+
+    &:hover {
+        img { opacity: .4; }
+        .list-view-item__description { bottom: -1%; }
+        .gallery_label { opacity: 1; }
+    }
+
+}

@@ -1,0 +1,392 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.home-slider {
+    position: relative;
+    max-height: 880px;
+    overflow: hidden;
+    padding: 0;
+
+    .owl-item {
+        max-height: 880px;
+    }
+
+    .teaser {
+        position: absolute;
+        display: block;
+        top: 50%;
+        text-align: center;
+        opacity: 0;
+
+        p {
+            display: block;
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            line-height: 48px;
+            text-transform: uppercase;
+            padding: 10px;
+            color: @white;
+
+            background-color: rgba(53, 53, 53, .9);
+        }
+
+        b {
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 64px;
+        }
+    }
+
+    .owl-nav { display: none; }
+    .owl-dots { display: none; }
+}
+
+.few-words {
+    padding: 160px 0;
+
+    .sub-heading { margin-bottom: 50px; }
+
+    .col-md-4 {
+        text-align: center;
+        padding: 0 40px;
+
+        &:first-of-type {
+            border-right: 1px solid #e8ddcc;
+        }
+
+        &:last-of-type {
+            border-left: 1px solid #e8ddcc;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin: 40px 0 15px 0;
+        }
+        p {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-style: italic;
+            line-height: 23px;
+            color: #7e7e7e;
+        }
+    }
+}
+
+.room-teaser {
+    background-color: @bg-color-primary;
+    .col-md-6:first-of-type { padding-left: 0; }
+    .room-description {
+        padding: 75px 10% 75px 50px;
+        * {
+            font-family: 'Lora', serif;
+            color: @white;
+        }
+        h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 23px;
+        }
+        ul { margin-top: 25px; }
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 48%;
+
+            &:nth-of-type(2n+1) {
+                margin-right: 4%;
+            }
+            &:before {
+                content: '*';
+                position: absolute;
+                left: -13px;
+            }
+        }
+        button {
+            width: auto;
+            float: right;
+            margin: 30px 0;
+        }
+    }
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+}
+
+.container.distances {
+    padding: 50px 0;
+
+    .col-md-3 {
+        width: calc(~"25% - 30px");
+        height: 186px;
+        padding: 0 0 50px 0;
+        margin: 0 15px;
+
+        font-family: 'Lora', serif;
+        font-size: 28px;
+        line-height: 122px;
+        text-align: center;
+        color: @white;
+
+        border-left: 1px solid #4a4a4a;
+        border-right: 1px solid #4a4a4a;
+        background: url('../images/symbol.png') no-repeat top center;
+
+        &:first-of-type {
+            border-left: 0;
+        }
+
+        &:last-of-type {
+            border-right: 0;
+        }
+
+        span.heading {
+            width: 100%;
+            display: block;
+            margin-top: 25px;
+            text-align: center;
+
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 22px;
+            text-align: center;
+            color: @white;
+
+            p {
+                font-family: 'Lora', serif;
+            }
+        }
+    }
+}
+
+.fast-booking {
+    padding: 30px 0;
+    background-color: @bg-color-primary;
+
+    select {
+        margin: 0;
+        color: #aeaeae;
+        outline: none;
+        border-radius: 4px;
+        position: relative;
+        background: #353535;
+        padding: 4px 3px 4px 12px;
+        width: 100%;
+        height: 38px;
+        border: 1px solid #c9c9c9;
+    }
+
+    .form-control {
+        margin: 0;
+        height: 38px;
+        color: #aeaeae;
+        box-shadow: none;
+        background-color: transparent;
+        border: 1px solid #c9c9c9;
+    }
+}
+
+.walking-distances {
+    position: relative;
+    overflow: hidden;
+}
+
+.walking-bg {
+    color: #3c3c3c;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 230px;
+    position: absolute;
+    line-height: 170px;
+    top: 15px;
+    left: 50px;
+}
+
+.distances-bg {
+    color: #4b4b4b;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 230px;
+    position: absolute;
+    line-height: 170px;
+    right: 45px;
+    bottom: 30px;
+}
+
+// Responsive
+@media all and (max-width: 1805px) {
+    .room-teaser {
+        position: relative;
+
+        .col-md-6:first-of-type {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0; left: 0;
+            overflow: hidden;
+            img {
+                max-width: none;
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        .col-md-6:last-of-type {
+            padding-left: 35px;
+            margin-left: 50%;
+        }
+
+        .room-description {
+            padding: 75px 30px 75px 15px;
+        }
+    }
+}
+
+@media all and (max-width: 992px) {
+    .home-slider .teaser {
+        p {
+            font-size: 36px;
+            line-height: 36px;
+        }
+        b {
+            font-size: 42px;
+            line-height: 42px;
+        }
+    }
+
+    .container.distances .col-md-3 {
+        float: left !important;
+    }
+
+    .container-fluid.copyright .col-md-6 {
+        width: 100%;
+        line-height: 30px;
+        text-align: center;
+
+        &:first-of-type {
+            margin-top: 60px;
+        }
+    }
+
+    .room-teaser {
+        .col-md-6:first-of-type, .col-md-6:last-of-type {
+            position: relative;
+            width: 100%;
+            margin: 0;
+        }
+
+        .col-md-6:first-of-type {
+            padding: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .room-description {
+            padding: 45px 15px 45px 15px;
+        }
+    }
+
+    .few-words {
+        padding: 55px 15px;
+
+        .col-md-4 {
+            border: none !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    .split-view {
+        padding: 55px 15px;
+
+        .col-md-6 .image_holder {
+            height: auto;
+
+            img {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .split-view .col-md-6:first-of-type {
+        padding-top: 35px;
+    }
+
+    .fast-booking {
+        .col-md-6 {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media all and (max-width: 772px) {
+    .fast-booking {
+        .col-md-6 { margin-bottom: 0px; }
+        .col-sm-6, .col-sm-4 { margin-bottom: 20px; }
+    }
+}
+
+@media all and (max-width: 724px) {
+    .room-teaser {
+        .room-description {
+            text-align: left;
+            ul {
+                padding-left: 5px;
+            }
+            li {
+                width: 100%;
+                &:nth-of-type(2n+1) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 640px) {
+    .container.distances .col-md-3 {
+        width: calc(~"50% - 30px");
+
+        &:nth-of-type(2) { border-right: 0; }
+        &:nth-of-type(3) { border-left: 0; }
+    }
+
+    .home-slider .teaser {
+        p {
+            font-size: 28px;
+            line-height: 28px;
+        }
+        b {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+}
+
+@media all and (max-width: 420px) {
+    .home-slider .teaser {
+        p {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        b {
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 500;
+        }
+    }
+}
+
