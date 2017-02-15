@@ -43,6 +43,7 @@
     "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-ftp-push": "^1.2.0",
     "grunt-http-server": "^2.0.0",
     "grunt-php": "^1.5.1",
     "http-server": "^0.9.0",

@@ -287,6 +287,27 @@ module.exports = function (grunt) {
                     open: true
                 }
             }
+        },
+
+        ftp_push: {
+            prod: {
+                options: {
+                    authKey: "server",
+                    host: "hotelcitysavoy.com",
+                    dest: "/",
+                    port: 21,
+                    incrementalUpdates: false
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'dist',
+                        src: [
+                            "**/*"
+                        ]
+                    }
+                ]
+            }
         }
     });
 
@@ -323,5 +344,10 @@ module.exports = function (grunt) {
         'production',
         'php',
         'watch'
+    ]);
+
+    grunt.registerTask('production-deploy', [
+        'production',
+        'ftp_push'
     ]);
 };
