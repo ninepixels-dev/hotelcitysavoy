@@ -109,7 +109,7 @@ function generateBookingModal(form) {
         self.modal();
         if (form) {
             $.each(form.serializeArray(), function (_, kv) {
-                $('[name="' + kv.name + '"]').val(kv.value);
+                self.find('[name="' + kv.name + '"]').val(kv.value);
             });
         }
 

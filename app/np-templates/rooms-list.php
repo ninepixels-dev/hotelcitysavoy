@@ -11,7 +11,7 @@
                         <input type="radio" name="room" id="classic_single" value="Classic Single"/><label for="classic_single">Classic Single</label>
                         <input type="radio" name="room" id="classic_double" value="Classic Double"/><label for="classic_double">Classic Double</label>
                         <input type="radio" name="room" id="deluxe_double" value="Deluxe Double"/><label for="deluxe_double">Deluxe Double</label>
-                        <input type="radio" name="room" id="deluxe_twin" value="Classic Twin"/><label for="deluxe_twin">Deluxe Twin</label>
+                        <input type="radio" name="room" id="deluxe_twin" value="Deluxe Twin"/><label for="deluxe_twin">Deluxe Twin</label>
                         <input type="radio" name="room" id="suite" value="Suite"/><label for="suite">Suite</label>
                     </div>
                     <div class="separator">

@@ -44,7 +44,7 @@
                             <option disabled selected>Room</option>
                             <option value="Classic Single">Classic Single</option>
                             <option value="Classic Double">Classic Double</option>
-                            <option value="Delux Double">Deluxe Double</option>
+                            <option value="Deluxe Double">Deluxe Double</option>
                             <option value="Deluxe Twin">Deluxe Twin</option>
                             <option value="Suite">Suite</option>
                         </select>

@@ -5,19 +5,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><?php echo $GLOBALS['page']->title ?></title>
-        <meta name="description" content="<?php echo isset($GLOBALS['page']->description) ?: '' ?>">
+        <meta name="description" content="<?php echo isset($GLOBALS['page']->description) ? $GLOBALS['page']->description : '' ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:title" content="<?php echo $GLOBALS['page']->title ?>" />
         <meta property="og:description" content="<?php echo isset($GLOBALS['page']->description) ? $GLOBALS['page']->description : '' ?>" />
-        <meta property="og:image" content="<?php echo isset($GLOBALS['page']->image) ? $GLOBALS['page']->image->url : '/np-assets/images/logo.png' ?>" />
-        <link rel="icon" type="image/png" href="/np-assets/images/logo.png" />
+        <meta property="og:image" content="<?php echo isset($GLOBALS['page']->image) ? $GLOBALS['page']->image->url : '/np-assets/images/logo.svg' ?>" />
+        <link rel="icon" type="image/png" href="/np-assets/images/logo.svg" />
         <?php
         if (isset($_COOKIE['user']) || (isset($GLOBALS['page']->name) && $GLOBALS['page']->name === 'login-page')) {
             echo '<link rel="stylesheet" href="/np-assets/css/vendor.min.css">';
         }
         ?>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700|Open+Sans:400,600,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/np-assets/css/app.min.css?v6">
+        <link rel="stylesheet" href="/np-assets/css/app.min.css?v8">
     </head>
     <body>
         <?php

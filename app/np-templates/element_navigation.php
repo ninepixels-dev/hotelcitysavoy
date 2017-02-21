@@ -35,7 +35,7 @@ foreach ($root_pages as $key => $n_page) {
     if ($key === (count($root_pages) / 2)) {
         echo '</div>';
         echo '<div class="col-md-2 logo-container">';
-        echo '<a href="/' . $toolbar . '"><img src="/np-assets/images/logo.png" alt="Hotel City Savoy" /></a>';
+        echo '<a href="/' . $toolbar . '"><img src="/np-assets/images/logo.svg" alt="Hotel City Savoy" /></a>';
         echo '<span class="logo_mask"></span>';
         echo '</div>';
         echo '<div class="col-md-5">';

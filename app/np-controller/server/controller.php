@@ -6,8 +6,6 @@ ob_start("ob_gzhandler");
 // Set defaults
 $GLOBALS['SERVER_URL'] = 'http://hotelcitysavoy.com/api/web/';
 $GLOBALS['CLIENT_URL'] = 'http://hotelcitysavoy.com/';
-//$GLOBALS['SERVER_URL'] = 'http://localhost:8000/';
-//$GLOBALS['CLIENT_URL'] = 'http://localhost:8100/';
 $GLOBALS['LOCALE'] = '';
 
 $GLOBALS['WITHOUT_TOOLBAR'] = isset($_GET['toolbar']);
